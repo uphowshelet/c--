@@ -31,6 +31,16 @@ class litenergy{
         string getColor(){
             return color;
         }
+        litenergy(){
+            taste = "peach";
+        }
+        litenergy(float x, string v){
+            volume = x;
+            color = v;
+        }
+        ~litenergy(){
+            cout << "Object " << color << " destroyed";
+        }
 };
 int main(){
     litenergy litenergy1;
