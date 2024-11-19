@@ -28,3 +28,31 @@
 //     delete []m;
 // }
 
+// Пользователь вводит с клавиатуры число X.
+// Необходимо создать одномерный динамический массив 
+// размера X, который заполнен цифрами (0-9) случайно.
+// Вывести на экран сколько раз встретилась каждая цифра
+// в массиве.
+
+// #include<iostream>
+// #include<ctime>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     srand(time(0));
+//     int x;
+//     int k = 1;
+//     cin>>x;
+//     int a[10]={0,0,0,0,0,0,0,0,0,0};
+//     int* arr= new int[x];
+//     for(int i=0;i<x;i++){
+//         arr[i]=rand()%10;
+//         cout<<arr[i]<<" ";
+//         a[arr[i]]++;
+//     }
+//     cout<<endl;
+//     for(int i=0;i<10;i++){
+//         cout<<i<<"- "<<a[i]<<" раз"<<endl;
+//     }
+//     delete []arr;
+// }
