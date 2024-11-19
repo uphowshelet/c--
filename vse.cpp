@@ -145,8 +145,19 @@
 //     cout<<ref;
 // }
 
-
-
+// // Создайте указатель на массив и выведите его элементы
+// #include<iostream>
+// #include<ctime>
+// using namespace std;
+// int main(){
+//     srand(time(0));
+//     int* a=new int[10];
+//     for(int i=0;i<10;i++){
+//         a[i]=rand()%10;
+//         cout<<a[i]<<" ";
+//     }
+//     delete []a;
+// }
 
 
 
