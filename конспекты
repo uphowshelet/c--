@@ -22,3 +22,6 @@
 // Удаление последовательных дубликатов
 auto last = unique(v.begin(), v.end());
 v.erase(last, v.end());
+
+
+чтобы отсортировать вектор в обратном порядке перед begin и end пишем r - rbegin,rend
