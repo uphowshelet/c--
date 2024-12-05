@@ -211,6 +211,108 @@
 // }
 
 
+// Разработайте программу, которая моделирует систему управления заказами в ресторане.
+// Программа должна управлять меню ресторана, которое включает блюда с ценами,
+// категориями (салаты, основные блюда, десерты, напитки) и калорийностью.
+// Пользователь может посмотреть меню; оформить заказ, выбрав несколько блюд.
+#include<iostream>
+#include<string>
+#include<vector>
+#include<map>
+#include<iomanip>
+using namespace std;
+struct menu{
+    string name;
+    string categories;
+    int price;
+    int calories;
+};
+int main(){
+    int a;
+    int sum=0;
+    menu salati;
+    salati.categories = "салат";
+    salati.price=300;
+    salati.calories=250;
+    map<string, menu> food;
+    food["4:цезарь"]= salati;
+    menu osnblud;
+    osnblud.categories="основные блюда";
+    osnblud.price=450;
+    osnblud.calories=700;
+    food["1:карбонара"] = osnblud;
+    menu des;
+    des.categories="десерты";
+    des.price=350;
+    des.calories=400;
+    food["3:тирамису"]=des;
+    menu napitk;
+    napitk.categories="напитки";
+    napitk.price=150;
+    napitk.calories=120;
+    food["2:лимонад"]=napitk;
+    cout << "Меню ресторана:" << endl;
+    cout << "Название\tКатегория\tЦена\tКалории" << endl;
+    for (const auto& o : food) {
+        cout <<o.first << "\t"
+             <<o.second.categories << "\t"
+             <<o.second.price << " руб.\t"
+             << o.second.calories << " ккал" << endl;
+    }
+    cout<<"ваш заказ?(1,2,3,4)"<<endl;
+    do{
+        cin >> a;
+        if (a==1){
+            sum+=osnblud.price;
+            cout<<"вы добавили карбонару"<<endl;
+            cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+        }else if(a==2){
+            sum+=napitk.price;
+            cout<<"вы добавили лимонад"<<endl;
+            cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+        }else if(a==3){
+            sum+=des.price;
+            cout<<"вы добавили тирамису"<<endl;
+            cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+        }else if(a==4){
+            sum+=salati.price;cout<<"вы добавили цезарь"<<endl;
+            cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+        }
+        else if(a>4){
+            cout<<"такой позиции не существует)"<<endl;
+        }
+        cout<<"сумма заказа: "<<sum<<endl;
+    }while(a!=0);
+    cout<<"Заказ оформлен! Общая стоимость: "<<sum<<"руб";
+    
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
 
 
 
