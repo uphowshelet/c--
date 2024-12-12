@@ -286,6 +286,94 @@ int main(){
     cout<<"Заказ оформлен! Общая стоимость: "<<sum<<"руб";
     
 }
+#include <iostream>
+#include<vector>
+#include<map>
+#include<string>
+using namespace std;
+struct catalog{
+    float price;
+    string cat;
+    int colvo;
+};
+map<string, catalog> elec;
+void cata() {
+    cout << "Название\tКатегория\t     Цена      \tКоличество" << endl;
+    cout << "--------------------------------------------------" << endl;
+    for (const auto& o : elec) {
+        cout << o.first << "\t"
+             << o.second.cat << "\t"
+             << o.second.price << " руб.\t"
+             << o.second.colvo << endl;
+    }
+    cout << "--------------------------------------------------" << endl;
+};
+void find(){
+    cout<<"введите название товара: "<<endl;
+    getline(cin,string s);
+    if(s=="телевизор"){
+        cout<<tv;
+};
+void menu() {
+    int vibor;
+    do{
+        cout<< "1. Показать каталог товаров." << endl;
+        cout<< "2. Найти товар." << endl;
+        cout<< "3. Добавить товар в корзину." << endl;
+        cout<< "4. Удалить товар из корзины." << endl;
+        cout<< "5. Оформить заказ." << endl;
+        cout<< "6. Показать аналитику продаж." << endl;
+        cout<< "7. Выход" << endl;
+        cout<< "Выберите действие: ";
+        cin >>vibor;
+        switch (vibor){
+            case 1:
+                cata();
+                break;
+            case 2:
+                find();
+                break;
+            // case 3:
+            //     add();
+            //     break;
+            // case 4:
+            //     remove();
+            //     break;
+            // case 5:
+            //     checkout();
+            //     break;
+            // case 6:
+            //     analytics();
+            //     break;
+            case 7:
+                cout << "выход из программыйоу" << endl;
+                break;
+            default:
+                cout << "неверный выбор" << endl;
+        }
+    } while (vibor != 7);
+}
+
+int main() {
+    catalog tv;
+    tv.price=29990;
+    tv.cat="электронника";
+    tv.colvo=10;
+    elec["2:телевизор"]= tv;
+    catalog ytyg;
+    ytyg.price=5000;
+    ytyg.cat="бытовая техника";
+    ytyg.colvo=3;
+    elec["3:утюг    "]=ytyg;
+    catalog tele;
+    tele.price=50000;
+    tele.cat="телефоны      ";
+    tele.colvo=25;
+    elec["1:смартфон"]=tele;
+    menu();
+}
+
+    
     
     
     
