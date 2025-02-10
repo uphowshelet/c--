@@ -211,6 +211,7 @@
 // }
 
 
+
 // // Разработайте программу, которая моделирует систему управления заказами в ресторане.
 // // Программа должна управлять меню ресторана, которое включает блюда с ценами,
 // // категориями (салаты, основные блюда, десерты, напитки) и калорийностью.
@@ -285,6 +286,180 @@
 //     }while(a!=0);
 //     cout<<"Заказ оформлен! Общая стоимость: "<<sum<<"руб";  
 // }
+
+// // Разработайте программу, которая моделирует систему управления заказами в ресторане.
+// // Программа должна управлять меню ресторана, которое включает блюда с ценами,
+// // категориями (салаты, основные блюда, десерты, напитки) и калорийностью.
+// // Пользователь может посмотреть меню; оформить заказ, выбрав несколько блюд.
+// #include<iostream>
+// #include<string>
+// #include<vector>
+// #include<map>
+// #include<iomanip>
+// using namespace std;
+// struct menu{
+//     string name;
+//     string categories;
+//     int price;
+//     int calories;
+// };
+// int main(){
+//     int a;
+//     int sum=0;
+//     menu salati;
+//     salati.categories = "салат";
+//     salati.price=300;
+//     salati.calories=250;
+//     map<string, menu> food;
+//     food["4:цезарь"]= salati;
+//     menu osnblud;
+//     osnblud.categories="основные блюда";
+//     osnblud.price=450;
+//     osnblud.calories=700;
+//     food["1:карбонара"] = osnblud;
+//     menu des;
+//     des.categories="десерты";
+//     des.price=350;
+//     des.calories=400;
+//     food["3:тирамису"]=des;
+//     menu napitk;
+//     napitk.categories="напитки";
+//     napitk.price=150;
+//     napitk.calories=120;
+//     food["2:лимонад"]=napitk;
+//     cout << "Меню ресторана:" << endl;
+//     cout << "Название\tКатегория\tЦена\tКалории" << endl;
+//     for (const auto& o : food) {
+//         cout <<o.first << "\t"
+//              <<o.second.categories << "\t"
+//              <<o.second.price << " руб.\t"
+//              << o.second.calories << " ккал" << endl;
+//     }
+//     cout<<"ваш заказ?(1,2,3,4)"<<endl;
+//     do{
+//         cin >> a;
+//         if (a==1){
+//             sum+=osnblud.price;
+//             cout<<"вы добавили карбонару"<<endl;
+//             cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+//         }else if(a==2){
+//             sum+=napitk.price;
+//             cout<<"вы добавили лимонад"<<endl;
+//             cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+//         }else if(a==3){
+//             sum+=des.price;
+//             cout<<"вы добавили тирамису"<<endl;
+//             cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+//         }else if(a==4){
+//             sum+=salati.price;cout<<"вы добавили цезарь"<<endl;
+//             cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+//         }
+//         else if(a>4){
+//             cout<<"такой позиции не существует)"<<endl;
+//         }
+//         cout<<"сумма заказа: "<<sum<<endl;
+//     }while(a!=0);
+//     cout<<"Заказ оформлен! Общая стоимость: "<<sum<<"руб";
+    
+// }
+// #include <iostream>
+// #include<vector>
+// #include<map>
+// #include<string>
+// using namespace std;
+// struct catalog{
+//     float price;
+//     string cat;
+//     int colvo;
+// };
+// map<string, catalog> elec;
+// void cata() {
+//     cout << "Название\tКатегория\t     Цена      \tКоличество" << endl;
+//     cout << "--------------------------------------------------" << endl;
+//     for (const auto& o : elec) {
+//         cout << o.first << "\t"
+//              << o.second.cat << "\t"
+//              << o.second.price << " руб.\t"
+//              << o.second.colvo << endl;
+//     }
+//     cout << "--------------------------------------------------" << endl;
+// };
+// void find(){
+//     cout<<"введите название товара: "<<endl;
+//     getline(cin,string s);
+//     if(s=="телевизор"){
+//         cout<<tv;
+// };
+// void menu() {
+//     int vibor;
+//     do{
+//         cout<< "1. Показать каталог товаров." << endl;
+//         cout<< "2. Найти товар." << endl;
+//         cout<< "3. Добавить товар в корзину." << endl;
+//         cout<< "4. Удалить товар из корзины." << endl;
+//         cout<< "5. Оформить заказ." << endl;
+//         cout<< "6. Показать аналитику продаж." << endl;
+//         cout<< "7. Выход" << endl;
+//         cout<< "Выберите действие: ";
+//         cin >>vibor;
+//         switch (vibor){
+//             case 1:
+//                 cata();
+//                 break;
+//             case 2:
+//                 find();
+//                 break;
+//             // case 3:
+//             //     add();
+//             //     break;
+//             // case 4:
+//             //     remove();
+//             //     break;
+//             // case 5:
+//             //     checkout();
+//             //     break;
+//             // case 6:
+//             //     analytics();
+//             //     break;
+//             case 7:
+//                 cout << "выход из программыйоу" << endl;
+//                 break;
+//             default:
+//                 cout << "неверный выбор" << endl;
+//         }
+//     } while (vibor != 7);
+// }
+
+// int main() {
+//     catalog tv;
+//     tv.price=29990;
+//     tv.cat="электронника";
+//     tv.colvo=10;
+//     elec["2:телевизор"]= tv;
+//     catalog ytyg;
+//     ytyg.price=5000;
+//     ytyg.cat="бытовая техника";
+//     ytyg.colvo=3;
+//     elec["3:утюг    "]=ytyg;
+//     catalog tele;
+//     tele.price=50000;
+//     tele.cat="телефоны      ";
+//     tele.colvo=25;
+//     elec["1:смартфон"]=tele;
+//     menu();
+// }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     
 // #include<iostream>
 // using namespace std;
