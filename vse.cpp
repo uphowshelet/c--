@@ -211,94 +211,206 @@
 // }
 
 
-// Разработайте программу, которая моделирует систему управления заказами в ресторане.
-// Программа должна управлять меню ресторана, которое включает блюда с ценами,
-// категориями (салаты, основные блюда, десерты, напитки) и калорийностью.
-// Пользователь может посмотреть меню; оформить заказ, выбрав несколько блюд.
-#include<iostream>
-#include<string>
-#include<vector>
-#include<map>
-#include<iomanip>
-using namespace std;
-struct menu{
-    string name;
-    string categories;
-    int price;
-    int calories;
-};
-int main(){
-    int a;
-    int sum=0;
-    menu salati;
-    salati.categories = "салат";
-    salati.price=300;
-    salati.calories=250;
-    map<string, menu> food;
-    food["4:цезарь"]= salati;
-    menu osnblud;
-    osnblud.categories="основные блюда";
-    osnblud.price=450;
-    osnblud.calories=700;
-    food["1:карбонара"] = osnblud;
-    menu des;
-    des.categories="десерты";
-    des.price=350;
-    des.calories=400;
-    food["3:тирамису"]=des;
-    menu napitk;
-    napitk.categories="напитки";
-    napitk.price=150;
-    napitk.calories=120;
-    food["2:лимонад"]=napitk;
-    cout << "Меню ресторана:" << endl;
-    cout << "Название\tКатегория\tЦена\tКалории" << endl;
-    for (const auto& o : food) {
-        cout <<o.first << "\t"
-             <<o.second.categories << "\t"
-             <<o.second.price << " руб.\t"
-             << o.second.calories << " ккал" << endl;
-    }
-    cout<<"ваш заказ?(1,2,3,4)"<<endl;
-    do{
-        cin >> a;
-        if (a==1){
-            sum+=osnblud.price;
-            cout<<"вы добавили карбонару"<<endl;
-            cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
-        }else if(a==2){
-            sum+=napitk.price;
-            cout<<"вы добавили лимонад"<<endl;
-            cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
-        }else if(a==3){
-            sum+=des.price;
-            cout<<"вы добавили тирамису"<<endl;
-            cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
-        }else if(a==4){
-            sum+=salati.price;cout<<"вы добавили цезарь"<<endl;
-            cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
-        }
-        else if(a>4){
-            cout<<"такой позиции не существует)"<<endl;
-        }
-        cout<<"сумма заказа: "<<sum<<endl;
-    }while(a!=0);
-    cout<<"Заказ оформлен! Общая стоимость: "<<sum<<"руб";
+// // Разработайте программу, которая моделирует систему управления заказами в ресторане.
+// // Программа должна управлять меню ресторана, которое включает блюда с ценами,
+// // категориями (салаты, основные блюда, десерты, напитки) и калорийностью.
+// // Пользователь может посмотреть меню; оформить заказ, выбрав несколько блюд.
+// #include<iostream>
+// #include<string>
+// #include<vector>
+// #include<map>
+// #include<iomanip>
+// using namespace std;
+// struct menu{
+//     string name;
+//     string categories;
+//     int price;
+//     int calories;
+// };
+// int main(){
+//     int a;
+//     int sum=0;
+//     menu salati;
+//     salati.categories = "салат";
+//     salati.price=300;
+//     salati.calories=250;
+//     map<string, menu> food;
+//     food["4:цезарь"]= salati;
+//     menu osnblud;
+//     osnblud.categories="основные блюда";
+//     osnblud.price=450;
+//     osnblud.calories=700;
+//     food["1:карбонара"] = osnblud;
+//     menu des;
+//     des.categories="десерты";
+//     des.price=350;
+//     des.calories=400;
+//     food["3:тирамису"]=des;
+//     menu napitk;
+//     napitk.categories="напитки";
+//     napitk.price=150;
+//     napitk.calories=120;
+//     food["2:лимонад"]=napitk;
+//     cout << "Меню ресторана:" << endl;
+//     cout << "Название\tКатегория\tЦена\tКалории" << endl;
+//     for (const auto& o : food) {
+//         cout <<o.first << "\t"
+//              <<o.second.categories << "\t"
+//              <<o.second.price << " руб.\t"
+//              << o.second.calories << " ккал" << endl;
+//     }
+//     cout<<"ваш заказ?(1,2,3,4)"<<endl;
+//     do{
+//         cin >> a;
+//         if (a==1){
+//             sum+=osnblud.price;
+//             cout<<"вы добавили карбонару"<<endl;
+//             cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+//         }else if(a==2){
+//             sum+=napitk.price;
+//             cout<<"вы добавили лимонад"<<endl;
+//             cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+//         }else if(a==3){
+//             sum+=des.price;
+//             cout<<"вы добавили тирамису"<<endl;
+//             cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+//         }else if(a==4){
+//             sum+=salati.price;cout<<"вы добавили цезарь"<<endl;
+//             cout<<"желаете заказать что-то еще? (если нет введите ноль)"<<endl;
+//         }
+//         else if(a>4){
+//             cout<<"такой позиции не существует)"<<endl;
+//         }
+//         cout<<"сумма заказа: "<<sum<<endl;
+//     }while(a!=0);
+//     cout<<"Заказ оформлен! Общая стоимость: "<<sum<<"руб";  
+// }
     
-}
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int a,b;
+//     cout<<"введите первое число: ";
+//     cin>>a;
+//     cout<<"введите второе число: ";
+//     cin>>b;
+//     cout<<"сумма: "<<a+b;
+// }
+    
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int a;
+//     cout<<"введите число: ";
+//     cin>>a;
+//     if (a%2==0){cout<<"число "<<a<<" четное";}
+//     else{cout<<"число "<<a<<" нечетное";}
+// }
+    
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int sun=0;
+//     int a[5];
+//     for(int i=0;i<5;i++){
+//         cin>>a[i];
+//     }
+//     for(int i =0;i<5;i++){
+//         sun+=a[i];
+//     }
+//     cout<<sun;
+// }  
+    
+// #include<iostream>
+// #include<algorithm>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int>v;
+//     int a;
+//     int n=3;
+//     cout<<"введите три числа: "<<endl;
+//     for(int i =0 ;i<3;i++){
+//         cin>>a;
+//         v.push_back(a);
+//     }
+//     sort(v.begin(),v.end());
+//     cout<<v[n-1];
+// }
+ 
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     int b;
+//     string a;
+//     cin>>a;
+//     b=a.size();
+//     for(int i=b;i>=0;i--){
+//         cout<<a[i];
+//     }
+// }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+// #include<iostream>
+// #include<ctime>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     srand(time(0));
+//     int a[5];
+//     for(int i=0;i<5;i++){
+//         a[i]=rand()%(10-(-10)+1)+(-10);
+//         cout<<a[i]<<" ";
+//     }
+//     sort(a,a+5);
+//     cout<<endl;
+//     for(int i =0;i<5;i++){
+//         cout<<a[i]<<" ";
+//     }
+// }
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int a,b;
+//     string s;
+//     cout<<"введите первое число: ";
+//     cin>>a;
+//     cout<<"введите второе число: ";
+//     cin>>b;
+//     cout<<"введите операцию (+, -, *, /): ";
+//     cin>>s;
+//     if(s=="+"){cout<<"результат: "<<a+b;}
+//     if(s=="-"){cout<<"результат: "<<a-b;}
+//     if(s=="*"){cout<<"результат: "<<a*b;}
+//     if(s=="/"){cout<<"результат: "<<a/b;}
+// }    
+
+// // Напиши программу, которая:
+// // Запрашивает у пользователя размер массива.
+// // Динамически выделяет память для массива.
+// // Заполняет массив числами, введенными пользователем.
+// // Выводит массив на экран.
+// // Освобождает память.
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int* a=new int;
+//     cout<<"введите размер массива: ";
+//     cin>>*a;
+//     int arr[*a];
+//     for(int i=0;i<*a;i++){
+//         cout<<"введите элемент "<<i+1<<": ";
+//         cin>>arr[i];
+//     }
+//     cout<<"массив: ";
+//     for(int i =0;i<*a;i++){
+//         cout<<arr[i]<<" ";
+//     }
+//     delete a;
+//     delete[] arr;
+// }
     
     
     
