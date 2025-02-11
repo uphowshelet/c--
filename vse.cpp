@@ -633,12 +633,69 @@
 //     delete[] arr;
 // }
 
-    
-    
-    
-    
-    
-    
+// #include<iostream>
+// #include<fstream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     fstream outfile("qwe.txt",ios::in);
+//     // outfile<<endl;
+//     // outfile<<"wqeurhfwuh!";
+//     string line;
+//     while(getline(outfile,line)){
+//         cout<<line<<endl;
+//     }
+//     outfile.close();
+//     fstream outfile2("qwe.txt",ios::app);
+//     outfile2<<endl;
+//     outfile2<<"щалмукщшцлап";
+//     outfile2.close();
+// }
+ 
+// // Запрашивает у пользователя имя файла.
+// // Запрашивает несколько чисел и записывает их в файл.
+// // Читает числа из файла и вычисляет их сумму.
+// #include<iostream>
+// #include<fstream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string namefile;
+//     cout<<"введите имя файла: "<<endl;
+//     cin>>namefile;
+//     fstream outfile(namefile,ios::out);
+//     if (!outfile.is_open()) {
+//         cout << "Ошибка открытия файла!" << endl;
+//         return 1;
+//     }
+//     int kol;
+//     cout<<"сколько чисел вы хотите добавить в файл? "<<endl;
+//     cin>>kol;
+//     int* arr=new int[kol];
+//     cout<<"вводите числа: "<<endl;
+//     for(int i=0;i<kol;i++){
+//         cin>>arr[i];
+//     }
+//     for(int i=0;i<kol;i++){
+//         outfile<<arr[i]<<" ";
+//     }
+//     outfile.close();
+
+
+//     fstream infile(namefile,ios::in);
+//     int sum=0;
+//     for(int i=0;i<kol;i++){
+//         sum+=arr[i];
+//     }
+//     string line;
+//     cout<<"числа в файле "<<namefile<<": "<<endl;
+//     while(getline(infile,line)){
+//         cout<<line<<endl;
+//     }
+//     cout<<"сумма чисел в файле: "<<sum;
+//     infile.close();
+//     delete[] arr;
+// }  
    
 
 
