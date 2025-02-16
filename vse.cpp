@@ -697,11 +697,166 @@
 //     delete[] arr;
 // }  
    
+// #include <iostream>
+// using namespace std;
+// int plus(int a,int b){
+//     return a+b;
+// }
+// float plus(float a,float b){
+//     return a+b;
+// }
+// double plus(double a,double b){
+//     return a+b;
+// }
+// double plus(int a,double b){
+//     return a+b;
+// }
+// double plus(double a,int b){
+//     return a+b;
+// }
+// int minus(int a,int b){
+//     return a-b;
+// }
+// float minus(float a,float b){
+//     return a-b;
+// }
+// double minus(double a,double b){
+//     return a-b;
+// }
+// double minus(int a,double b){
+//     return a-b;
+// }
+// double minus(double a,int b){
+//     return a-b;
+// }
+// int ymnog(int a,int b){
+//     return a*b;
+// }
+// float ymnog(float a,float b){
+//     return a*b;
+// }
+// double ymnog(double a,double b){
+//     return a*b;
+// }
+// double ymnog(int a,double b){
+//     return a*b;
+// }
+// double ymnog(double a,int b){
+//     return a*b;
+// }
+// int del(int a,int b){
+//     if(a==0 or b==0){
+//         cout<<"делить на ноль нельзяя"<<endl;
+//         return 0;
+//     }
+//     return a/b;
+// }
+// float del(float a,float b){
+//     if(a==0 or b==0){
+//         cout<<"делить на ноль нельзяя"<<endl;
+//         return 0;
+//     }
+//     return a/b;
+// }
+// double del(double a,double b){
+//     if(a==0 || b==0){
+//         cout<<"делить на ноль нельзяя"<<endl;
+//         return 0;
+//     }
+//     return a/b;
+// }
+// double del(int a,double b){
+//     if(a==0 || b==0){
+//         cout<<"делить на ноль нельзяя"<<endl;
+//         return 0;
+//     }
+//     return a/b;
+// }
+// double del(double a,int b){
+//     if(a==0 || b==0){
+//         cout<<"делить на ноль нельзяя"<<endl;
+//         return 0;
+//     }
+//     return a/b;
+// }
+// int main() {
+//     cout<<"";
+// }
 
 
+// // Создай структуру Book, которая будет хранить название книги, автора и год издания.
+// // Создай переменную типа Book, заполни её данными и выведи их на экран.
+// // Создай массив из 3 структур Book. Заполни его данными и выведи информацию о всех книгах.
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// struct Book{
+//     string nazvanie;
+//     string avtor;
+//     int god;
+// };
+// int main(){
+//     // Book book1;
+//     // book1.nazvanie="капитанская дочка";
+//     // book1.avtor="Пушкин";
+//     // book1.god=1111;
+//     // cout<<book1.nazvanie<<endl;
+//     // cout<<book1.avtor<<endl;
+//     // cout<<book1.god<<endl;
+
+//     int size;
+//     cout<<"сколько книг вы хотите внести? "<<endl;
+//     cin>>size;
+//     Book book2[size];
+//     for(int i =0;i<size;i++){
+//         cout<<"введите название книги №"<<i+1<<": "<<endl;
+//         cin>>book2[i].nazvanie;
+//         cout<<"введите автора книги №"<<i+1<<": "<<endl;
+//         cin>>book2[i].avtor;
+//         cout<<"введите год издания книги №"<<i+1<<": "<<endl;
+//         cin>>book2[i].god;
+//     }
+//     cout<<endl;
+//     cout<<"----------------------------";
+//     cout<<endl;
+//     for(int i=0;i<size;i++){
+//         cout<<"книга №"<<i+1<<":"<<book2[i].nazvanie<<endl;
+//         cout<<"автор:"<<book2[i].avtor<<endl;
+//         cout<<"год издания:"<<book2[i].god<<endl;
+//         cout<<endl;
+//     }
+// }
 
 
+// // // Создай программу с меню:
+// // // В зависимости от выбора пользователя программа должна выполнять соответствующее действие.
+// // // Добавь цикл, чтобы меню отображалось снова после выполнения действия (кроме выхода).
+// #include<iostream>
+// #include <ctime>
+// using namespace std;
+// int main(){
+//     int n;
+//     while(n!=3){
+//         cout<<"1. Показать приветствие"<<endl;
+//         cout<<"2. Показать текущую дату"<<endl;
+//         cout<<"3. Выйти"<<endl;
+//         cin>>n;
 
+//         if(n==1){
+//             cout<<"-----------------------"<<endl;
+//             cout<<"здравствуйте господин)"<<endl;
+//             cout<<"-----------------------"<<endl;
+//         }
+//         if(n==2){
+//             cout<<"-----------------------"<<endl;
+//             time_t now = time(nullptr);
+//             tm* localTime = localtime(&now);
+//             cout<<"текущая дата: ";
+//             cout<<localTime->tm_mday<<"."<<localTime->tm_mon+1<<"."<<localTime->tm_year+1900<<endl;
+//             cout<<"-----------------------"<<endl;
+//         }
+//     }
+// }
 
 
 
