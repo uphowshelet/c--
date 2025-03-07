@@ -40,3 +40,23 @@ int main(){
     int cx=count(v.begin(),v.end(),x);
     cout<<cx;
 }
+
+//3)
+#include<iostream>
+#include<stack>
+using namespace std;
+int main(){
+    stack<int>v;
+    int a;
+    cin >>a;
+    for(int i = 0;i<a;i++){
+        int b;
+        cin >> b;
+        v.push(b);
+    }
+    while (!v.empty()){
+        cout <<v.top()<<" ";
+        v.pop();
+    }
+}
+
