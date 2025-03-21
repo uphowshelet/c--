@@ -862,7 +862,6 @@
 
 
 
-
 #include <iostream>
 #include <ctime>
 #include <list>
@@ -872,18 +871,21 @@ using namespace std;
 
 vector<int>vector1;
 vector<int>vector2;
-void quuuiiick(vector<int>arr){
-    do{
-        int opora=arr[arr.size()/2];
-        for (int i=0;i<arr.size();i++){
-            if (arr[i]<opora){
-                vector1.push_back(arr[i]);
-            }else vector2.push_back(arr[i]);
-        }
-        quuuiiick(vector1); quuuiiick(vector2);
-    }while (vector1.size()>1);
-    vector1.insert(vector1.end(), vector2.begin(), vector2.end());
-    arr=vector1;
+void quuuiiick(vector<int>arr, int left, int right){
+   int i = left, j = right;
+   int opora=arr[left];
+   while (i<=j){
+       while(arr[i] < opora) i++;
+       while (arr[j] > opora) j--;
+       if (i <= j){
+           int temp = arr[i];
+           arr[i] = arr[j];
+           arr[j] = temp;
+           i++; j--;
+       }
+   }
+   if (left < j) quuuiiick(arr, left, j);
+   if (i < right) quuuiiick(arr, i, right);
 }
 
 
@@ -892,14 +894,15 @@ int main()
 
 vector<int>unsorted;
 for (int i=7;i>0;i--) unsorted.push_back(i);
-for (int s=0; s<unsorted.size();s++) cout << unsorted[s] << " ";
-quuuiiick(unsorted);
-for (int s=0; s<unsorted.size();s++) cout << unsorted[s] << " ";
+int n = unsorted.size();
+for (int s=0; s<n;s++) cout << unsorted[s] << " ";
+quuuiiick(unsorted, 0, n-1);
+cout << endl;a
+for (int s=0; s<n;s++) cout << unsorted[s] << " ";
 
 
 
 }
-
 
 
 
