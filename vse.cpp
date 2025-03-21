@@ -863,6 +863,44 @@
 
 
 
+#include <iostream>
+#include <ctime>
+#include <list>
+#include <vector>
+using namespace std;
+
+
+vector<int>vector1;
+vector<int>vector2;
+void quuuiiick(vector<int>arr){
+    do{
+        int opora=arr[arr.size()/2];
+        for (int i=0;i<arr.size();i++){
+            if (arr[i]<opora){
+                vector1.push_back(arr[i]);
+            }else vector2.push_back(arr[i]);
+        }
+        quuuiiick(vector1); quuuiiick(vector2);
+    }while (vector1.size()>1);
+    vector1.insert(vector1.end(), vector2.begin(), vector2.end());
+    arr=vector1;
+}
+
+
+int main()
+{
+
+vector<int>unsorted;
+for (int i=7;i>0;i--) unsorted.push_back(i);
+for (int s=0; s<unsorted.size();s++) cout << unsorted[s] << " ";
+quuuiiick(unsorted);
+for (int s=0; s<unsorted.size();s++) cout << unsorted[s] << " ";
+
+
+
+}
+
+
 
 
 
