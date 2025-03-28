@@ -857,97 +857,73 @@
 //         }
 //     }
 // }
-#include <iostream>
-using namespace std;
-int plus(int a,int b){
-    return a+b;
-}
-float plus(float a,float b){
-    return a+b;
-}
-double plus(double a,double b){
-    return a+b;
-}
-double plus(int a,double b){
-    return a+b;
-}
-double plus(double a,int b){
-    return a+b;
-}
-int minus(int a,int b){
-    return a-b;
-}
-float minus(float a,float b){
-    return a-b;
-}
-double minus(double a,double b){
-    return a-b;
-}
-double minus(int a,double b){
-    return a-b;
-}
-double minus(double a,int b){
-    return a-b;
-}
-int ymnog(int a,int b){
-    return a*b;
-}
-float ymnog(float a,float b){
-    return a*b;
-}
-double ymnog(double a,double b){
-    return a*b;
-}
-double ymnog(int a,double b){
-    return a*b;
-}
-double ymnog(double a,int b){
-    return a*b;
-}
-int del(int a,int b){
-    if(a==0 or b==0){
-        cout<<"делить на ноль нельзяя"<<endl;
-        return 0;
-    }
-    return a/b;
-}
-float del(float a,float b){
-    if(a==0 or b==0){
-        cout<<"делить на ноль нельзяя"<<endl;
-        return 0;
-    }
-    return a/b;
-}
-double del(double a,double b){
-    if(a==0 || b==0){
-        cout<<"делить на ноль нельзяя"<<endl;
-        return 0;
-    }
-    return a/b;
-}
-double del(int a,double b){
-    if(a==0 || b==0){
-        cout<<"делить на ноль нельзяя"<<endl;
-        return 0;
-    }
-    return a/b;
-}
-double del(double a,int b){
-    if(a==0 || b==0){
-        cout<<"делить на ноль нельзяя"<<endl;
-        return 0;
-    }
-    return a/b;
-}
-int main() {
-    cout<<""
-}
 
 
+// // Создай программу, которая запрашивает у пользователя имя и возраст, а затем записывает их в файл.
+// // Напиши программу, которая читает данные из файла (имя и возраст) и выводит их на экран.
+// // Добавление данных в файл:
+// // Модифицируй программу так, чтобы она добавляла новые данные в конец файла, не удаляя старые.
+// #include<iostream>
+// #include<fstream>
+// #include<string>
+// using namespace std;
+// int main()
+// {   
+//     int age;
+//     string name;
+//     ofstream outFile("qwe.txt");
+//     cout<<"введите возраст: "<<endl;
+//     cin>>age;
+//     cin.ignore();
+//     cout<<"введите имя: "<<endl;
+//     getline(cin,name);
+//     outFile<<"age: "<<age<<endl;
+//     outFile<<"name: "<<name<<endl;
+//     outFile.close();
+// }
+
+// #include<iostream>
+// #include<fstream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     fstream outFile("qwe.txt",ios::in);
+//     string line;
+//     while(getline(outFile,line)){
+//         cout<<line<<endl;
+//     }
+//     outFile.close();
+// }
+
+// #include<iostream>
+// #include<fstream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     fstream outFile("qwe.txt",ios::app);
+//     int age;
+//     string name;
+//     cout<<"введите возраст: "<<endl;
+//     cin>>age;
+//     cin.ignore();
+//     cout<<"введите имя: "<<endl;
 
 
+// }
 
 
+// #include <iostream>
+// #include <ctime>
+// using namespace std;
+// int main() {
+//     for(int i =0;i<100000;i++){
+//         time_t now = time(nullptr);
+//         tm* localTime = localtime(&now);
+//         cout << "Текущая дата и время: ";
+//         cout << localTime->tm_mday << "." << localTime->tm_mon + 1 << "." << localTime->tm_year + 1900 << " ";
+//         cout << localTime->tm_hour << ":" << localTime->tm_min << ":" << localTime->tm_sec << endl;
+//     }
+// }
 
 
 
