@@ -150,3 +150,45 @@
 //     cout<<endl;
 //     cout<<v[a-2];
 // }
+
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+    int n = 5;
+    vector<vector<double>> A(n, vector<double>(n, 0));
+    vector<double> b(n, 0);
+    srand(time(0));
+    for (int i = 0; i < n; ++i) {
+        double sum = 0;
+        for (int j = 0; j < n; ++j) {
+            if (i != j) {
+                A[i][j] = rand() % 100;
+                sum += abs(A[i][j]);
+            } else {
+                A[i][j] = 0;
+            }
+        }
+        A[i][i] = sum + rand() % 5 + 1;
+        b[i] = rand() % 100;
+    }
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            cout << A[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout<<endl;
+    for (int i = 0; i < n; ++i) {
+        cout << b[i] << endl;
+    }
+
+    return 0;
+}
+
