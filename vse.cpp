@@ -862,49 +862,74 @@
 
 
 
+// #include <iostream>
+// #include <ctime>
+// #include <list>
+// #include <vector>
+// using namespace std;
+
+
+// vector<int>vector1;
+// vector<int>vector2;
+// void quuuiiick(vector<int>arr, int left, int right){
+//    int i = left, j = right;
+//    int opora=arr[left];
+//    while (i<=j){
+//        while(arr[i] < opora) i++;
+//        while (arr[j] > opora) j--;
+//        if (i <= j){
+//            int temp = arr[i];
+//            arr[i] = arr[j];
+//            arr[j] = temp;
+//            i++; j--;
+//        }
+//    }
+//    if (left < j) quuuiiick(arr, left, j);
+//    if (i < right) quuuiiick(arr, i, right);
+// }
+
+
+// int main()
+// {
+
+// vector<int>unsorted;
+// for (int i=7;i>0;i--) unsorted.push_back(i);
+// int n = unsorted.size();
+// for (int s=0; s<n;s++) cout << unsorted[s] << " ";
+// quuuiiick(unsorted, 0, n-1);
+// cout << endl;a
+// for (int s=0; s<n;s++) cout << unsorted[s] << " ";
+
+
+
+// }
+
 #include <iostream>
-#include <ctime>
-#include <list>
 #include <vector>
 using namespace std;
-
-
-vector<int>vector1;
-vector<int>vector2;
-void quuuiiick(vector<int>arr, int left, int right){
-   int i = left, j = right;
-   int opora=arr[left];
-   while (i<=j){
-       while(arr[i] < opora) i++;
-       while (arr[j] > opora) j--;
-       if (i <= j){
-           int temp = arr[i];
-           arr[i] = arr[j];
-           arr[j] = temp;
-           i++; j--;
-       }
-   }
-   if (left < j) quuuiiick(arr, left, j);
-   if (i < right) quuuiiick(arr, i, right);
+int main() {
+    int size;
+    cin >> size;
+    vector<int> arr(size);
+    for (int i = 0; i < size; ++i) {
+        cin >> arr[i];
+    }
+    int x;
+    cin >> x;
+    int count = 0;
+    for (int i = 0; i < size; ++i) {
+        for (int j = i + 1; j < size; ++j) { 
+            if (arr[i] + arr[j] == x) {
+                count++;
+                cout << arr[i] << " " << arr[j] << endl;
+                arr[i] = x+1;  
+                arr[j] = x+1;  
+                break;           
+            }
+        }
+    }
+    cout << "всего пар: " << count << endl;
 }
-
-
-int main()
-{
-
-vector<int>unsorted;
-for (int i=7;i>0;i--) unsorted.push_back(i);
-int n = unsorted.size();
-for (int s=0; s<n;s++) cout << unsorted[s] << " ";
-quuuiiick(unsorted, 0, n-1);
-cout << endl;a
-for (int s=0; s<n;s++) cout << unsorted[s] << " ";
-
-
-
-}
-
-
 
 
 
