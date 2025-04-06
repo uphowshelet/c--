@@ -705,13 +705,13 @@
 // float plus(float a,float b){
 //     return a+b;
 // }
-// double plus(double a,double b){
+// int plus(int a,int b){
 //     return a+b;
 // }
-// double plus(int a,double b){
+// int plus(int a,int b){
 //     return a+b;
 // }
-// double plus(double a,int b){
+// int plus(int a,int b){
 //     return a+b;
 // }
 // int minus(int a,int b){
@@ -720,13 +720,13 @@
 // float minus(float a,float b){
 //     return a-b;
 // }
-// double minus(double a,double b){
+// int minus(int a,int b){
 //     return a-b;
 // }
-// double minus(int a,double b){
+// int minus(int a,int b){
 //     return a-b;
 // }
-// double minus(double a,int b){
+// int minus(int a,int b){
 //     return a-b;
 // }
 // int ymnog(int a,int b){
@@ -735,13 +735,13 @@
 // float ymnog(float a,float b){
 //     return a*b;
 // }
-// double ymnog(double a,double b){
+// int ymnog(int a,int b){
 //     return a*b;
 // }
-// double ymnog(int a,double b){
+// int ymnog(int a,int b){
 //     return a*b;
 // }
-// double ymnog(double a,int b){
+// int ymnog(int a,int b){
 //     return a*b;
 // }
 // int del(int a,int b){
@@ -758,21 +758,21 @@
 //     }
 //     return a/b;
 // }
-// double del(double a,double b){
+// int del(int a,int b){
 //     if(a==0 || b==0){
 //         cout<<"делить на ноль нельзяя"<<endl;
 //         return 0;
 //     }
 //     return a/b;
 // }
-// double del(int a,double b){
+// int del(int a,int b){
 //     if(a==0 || b==0){
 //         cout<<"делить на ноль нельзяя"<<endl;
 //         return 0;
 //     }
 //     return a/b;
 // }
-// double del(double a,int b){
+// int del(int a,int b){
 //     if(a==0 || b==0){
 //         cout<<"делить на ноль нельзяя"<<endl;
 //         return 0;
@@ -927,24 +927,179 @@
 
 
 
+// #include <iostream>
+// #include <ctime>
+// #include <list>
+// #include <vector>
+// using namespace std;
+
+
+// vector<int>vector1;
+// vector<int>vector2;
+// void quuuiiick(vector<int>arr, int left, int right){
+//    int i = left, j = right;
+//    int opora=arr[left];
+//    while (i<=j){
+//        while(arr[i] < opora) i++;
+//        while (arr[j] > opora) j--;
+//        if (i <= j){
+//            int temp = arr[i];
+//            arr[i] = arr[j];
+//            arr[j] = temp;
+//            i++; j--;
+//        }
+//    }
+//    if (left < j) quuuiiick(arr, left, j);
+//    if (i < right) quuuiiick(arr, i, right);
+// }
+
+
+// int main()
+// {
+
+// vector<int>unsorted;
+// for (int i=7;i>0;i--) unsorted.push_back(i);
+// int n = unsorted.size();
+// for (int s=0; s<n;s++) cout << unsorted[s] << " ";
+// quuuiiick(unsorted, 0, n-1);
+// cout << endl;a
+// for (int s=0; s<n;s++) cout << unsorted[s] << " ";
+
+
+
+// }
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+// int main() {
+//     int size;
+//     cin >> size;
+//     vector<int> arr(size);
+//     for (int i = 0; i < size; ++i) {
+//         cin >> arr[i];
+//     }
+//     int x;
+//     cin >> x;
+//     int count = 0;
+//     for (int i = 0; i < size; ++i) {
+//         for (int j = i + 1; j < size; ++j) { 
+//             if (arr[i] + arr[j] == x) {
+//                 count++;
+//                 cout << arr[i] << " " << arr[j] << endl;
+//                 arr[i] = x+1;  
+//                 arr[j] = x+1;  
+//                 break;           
+//             }
+//         }
+//     }
+//     cout << "всего пар: " << count << endl;
+// }
+
+// #include <iostream>
+// #include <vector>
+// #include <cstdlib>
+// #include <ctime>
+
+// using namespace std;
+
+// int main()
+// {
+//     int n = 5;
+//     vector<vector<int>> A(n, vector<int>(n, 0));
+//     vector<int> b(n, 0);
+//     srand(time(0));
+//     for (int i = 0; i < n; ++i) {
+//         int sum = 0;
+//         for (int j = 0; j < n; ++j) {
+//             if (i != j) {
+//                 A[i][j] = rand() % 100;
+//                 sum += abs(A[i][j]);
+//             } else {
+//                 A[i][j] = 0;
+//             }
+//         }
+//         A[i][i] = sum + rand() % 5 + 1;
+//         b[i] = rand() % 100;
+//     }
+
+//     for (int i = 0; i < n; ++i) {
+//         for (int j = 0; j < n; ++j) {
+//             cout << A[i][j] << "\t";
+//         }
+//         cout << endl;
+//     }
+//     cout<<endl;
+//     for (int i = 0; i < n; ++i) {
+//         cout << b[i] << endl;
+//     }
+
+//     return 0;
+// }
 
 
 
 
+// #include <iostream>
+// #include <vector>
+// #include <ctime>
+// using namespace std;
+// int main(){
+// srand(time(0));
+// int n, m; cin >> n;
+// vector<vector<int>>matrix(n, vector<int>(n));
+// vector<int>b(n);vector<int>x(n, 0);
+// for (int i = 0; i < n; i++){
+//     b[i]=rand()%(5+1);
+// }
+// for (int i = 0; i < n; i++)
+//     for (int j = 0; j < n; j++){
+//         matrix[i][j] = rand()%(101);
+// }
+// cout << "\n" << "UR MATRIX: " << "\t" << "|MATRIX B:" << "\n";
+// for (int i = 0; i < n; i++){
+//     for (int j = 0; j < n; j++) cout << matrix[i][j] << ' ';
+//     cout << "\t" <<  "| " << b[i] << "\n";
+// }
+
+// for (int i=0;i<n;i++){
+//     int maxrow = i;
+//     for (int k=i+1;k<n;k++){
+//         if (abs(matrix[k][i])>abs(matrix[maxrow][i])){
+//             maxrow=k;
+//         }
+//     }
+//     if (maxrow != i){
+//         swap(matrix[i], matrix[maxrow]);
+//         swap(b[i], b[maxrow]);
+//     }
+//     for (int j=i+1;j<n;j++){
+//         int m = matrix[j][i]/matrix[i][i];
+//         for (int k=i;k<m;k++){
+//             matrix[j][k] -= m*matrix[i][k];
+//         }
+//         b[j] -= m*b[i];
+//     }
+// }
+// cout << "\n" << "UR MATRIX: " << "\t" << "|MATRIX B:" << "\n";
+// for (int i = 0; i < n; i++){
+//     for (int j = 0; j < n; j++) cout << matrix[i][j] << ' ';
+//     cout << "\t" <<  "| " << b[i] << "\n";
+// }
+// for (int i=n-1;i>=0;i--){
+//     int sum = 0;
+//     for (int j=i+1;i<n;i++){
+//         sum+=matrix[i][j]*x[j];
+//     }
+//     x[i]=(b[i]-sum)/matrix[i][i];
+// }
+// cout << "SOLUTION: \n";
+// for (int i=0;i<n;i++){
+//     cout << "x[" << i << "] = " << x[i];
+// }
+// }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+#
 
 
 

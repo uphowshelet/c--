@@ -1,0 +1,62 @@
+//1)
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(){
+    vector<int>v;
+    int a,b;
+    cin>>b;
+    cout<<"---------------------------------"<<endl;
+    for(int i=0;i<b;i++){
+        cin>>a;
+        v.push_back(a);
+    }
+    sort(v.begin(),v.end());
+    auto s = unique(v.begin(), v.end());
+    v.erase(s, v.end());
+    cout<<"---------------------------------"<<endl;
+    cout<<v.size();
+}
+
+//2)
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(){
+    vector<int>v;
+    int a,b,x;
+    cin>>a;
+    cout<<"---------------"<<endl;
+    for(int i=0;i<a;i++){
+        cin>>b;
+        v.push_back(b);
+    }
+    cout<<"---------------"<<endl;
+    cout<<"x=";
+    cin>>x;
+    cout<<"---------------"<<endl;
+    int cx=count(v.begin(),v.end(),x);
+    cout<<cx;
+}
+
+//3)
+#include<iostream>
+#include<stack>
+using namespace std;
+int main(){
+    stack<int>v;
+    int a;
+    cin >>a;
+    for(int i = 0;i<a;i++){
+        int b;
+        cin >> b;
+        v.push(b);
+    }
+    while (!v.empty()){
+        cout <<v.top()<<" ";
+        v.pop();
+    }
+}
+
