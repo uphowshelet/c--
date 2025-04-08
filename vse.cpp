@@ -1098,12 +1098,68 @@
 // }
 // }
 
+// //Создайте структуру Point, содержащую два целых числа x и y. Создайте объект через unique_ptr и выведите координаты.
+// #include <iostream>
+// #include<memory>
+// using namespace std;
+// struct Point{
+//     int x;
+//     int y;
 
-#include<iostream>
-using namespace std;
-int main(){
-    
-}
+// };
+
+// int main()
+// {
+//     unique_ptr<Point> point =make_unique<Point>(Point{1,2});
+//     cout<<point->x << " " << point->y;
+// }
+
+// // Напишите функцию printPoint, которая принимает unique_ptr<Point> и выводит координаты. Передайте указатель в неё через std::move.
+// #include <iostream>
+// #include <memory> 
+// using namespace std;
+// struct Point {
+//     int x;
+//     int y;
+// };
+// void printPoint(unique_ptr<Point> point) {
+//     cout<<point->x << " "<<point->y<< endl;
+// }
+// int main() {
+//     unique_ptr<Point> point =make_unique<Point>(Point{23121, 4222});
+//     printPoint(move(point));
+// }
+
+// // Создайте два shared_ptr, указывающих на один объект Point. Измените координаты через один указатель и выведите их через второй. Выведите use_count().
+// #include<iostream>
+// #include<memory>
+// using namespace std;
+// struct Point {
+//     int x;
+//     int y;
+// };
+// int main(){
+//     shared_ptr<Point>qwe=make_shared<Point>(Point{1498,421});
+//     shared_ptr<Point>qwer=qwe;
+//     qwe->x=3213;
+//     qwe->y=432;
+//     cout <<qwer->x << " " << qwer->y<<endl<<qwe.use_count();
+// }
+
+// // Создайте shared_ptr на Point, затем создайте weak_ptr, указывающий на него. Освободите shared_ptr, затем проверьте, жив ли объект через lock().
+// #include<iostream>
+// #include<memory>
+// using namespace std;
+// struct Point{
+//     int x;
+//     int y;
+// };
+// int main(){
+//     shared_ptr<Point>qwe=make_shared<Point>(Point{14,23});
+//     weak_ptr<Point>weakqwe=qwe;
+//     auto locked=weakqwe.lock();
+//     cout<<locked->x<<" "<<locked->y;
+// }
 
 
 
